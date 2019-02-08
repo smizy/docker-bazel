@@ -9,6 +9,6 @@
     echo "$i:******** ${lines[$i]}"
   done
 
-  declare -a version=(${lines[2]})
+  declare -a version=(${lines[3]})
   [ "${version[2]}" = "0.22.0-" ]
 }
