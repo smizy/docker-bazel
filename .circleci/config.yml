@@ -38,6 +38,9 @@ jobs:
               curl \
               curl-dev \
               make
+      - run:
+          name: change shell 
+          command: bash
 
       - run:
           name: install dependencies - bats
