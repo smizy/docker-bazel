@@ -9,8 +9,11 @@
     echo "$i:******** ${lines[$i]}"
   done
 
-  version="$(IFS=' '; set -- ${lines[3]}; echo $3)"
-  echo "[version = $version]"
-
-  [ "$version" = "${VERSION}-" ]
+  for i in $(seq 0 $n); do
+    if [ "${lines[$i]:0:12}" = "Build label:" ]; then
+      ver="$(IFS=' '; set -- ${lines[3]}; echo $3)"
+      [ "$ver" = "${VERSION}-" ]
+      break
+    fi
+  done
 }
