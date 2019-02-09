@@ -11,7 +11,7 @@
 
   for i in $(seq 0 $n); do
     if [ "${lines[$i]:0:12}" = "Build label:" ]; then
-      ver="$(IFS=' '; set -- ${lines[3]}; echo $3)"
+      ver="$(IFS=' '; set -- ${lines[$i]}; echo $3)"
       [ "$ver" = "${VERSION}-" ]
       break
     fi
