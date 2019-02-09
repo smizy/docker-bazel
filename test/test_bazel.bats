@@ -12,5 +12,5 @@
   version="$(IFS=' '; set -- ${lines[3]}; echo $3)"
   echo "[version = $version]"
 
-  [ "$version" = "0.22.0-" ]
+  [ "$version" = "${VERSION}-" ]
 }
