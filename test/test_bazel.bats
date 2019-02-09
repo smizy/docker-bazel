@@ -9,6 +9,8 @@
     echo "$i:******** ${lines[$i]}"
   done
 
-  declare -a version=(${lines[3]})
-  [ "${version[2]}" = "0.22.0-" ]
+  version="$(IFS=' '; set -- ${lines[3]}; echo $3)"
+  echo "[version = $version]"
+
+  [ "$version" = "0.22.0-" ]
 }
