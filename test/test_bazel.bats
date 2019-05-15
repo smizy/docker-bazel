@@ -9,7 +9,7 @@
     echo "$i:******** ${lines[$i]}"
   done
 
-  version="$(IFS=' '; set -- ${lines[3]}; echo $3)"
+  version="$(IFS=' '; set -- ${lines[2]}; echo $3)"
   echo "[version = $version]"
 
   [ "$version" = "$VERSION"- ]
