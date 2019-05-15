@@ -28,12 +28,11 @@ RUN set -x \
     && apk --no-cache add \
         g++ \
         libstdc++ \
-        openjdk8-jre \
+        openjdk8 \
     && apk --no-cache add --virtual .builddeps \
         bash \
         build-base \
         linux-headers \
-        openjdk8 \
         python3-dev \
         wget \
         zip \
