@@ -2,10 +2,12 @@
 
 Bazel docker image based on alpine
 
+## Local build
+
 ```
 $ docker build \
     --build-arg="EXTRA_BAZEL_ARGS=--local_resources 3072,1.0,1.0 --host_javabase=@local_jdk//:jdk" \
-    --build-arg="VERSION=0.22.0" \
+    --build-arg="VERSION=0.25.2" \
     -t local/bazel .
 
 $ docker run -it --rm local/bazel bazel help
@@ -45,5 +47,22 @@ Getting more help:
                    Explains the syntax for specifying targets.
   bazel help info-keys
                    Displays a list of keys used by the info command.
+
+```
+
+## Use case 
+
+Docker multi stage build
+
+```
+FROM smizy/bazel:0.15.0-alpine as bazel
+
+# ----------
+FROM alpine:3.8
+
+COPY --from=bazel /usr/local/bin/bazel  /usr/local/bin/
+
+# Compile your code with bazel
+RUN ...
 
 ```
