@@ -10,11 +10,11 @@ LABEL \
     org.label-schema.docker.dockerfile="/Dockerfile" \
     org.label-schema.license="Apache License 2.0" \
     org.label-schema.name="smizy/bazel" \
-    org.label-schema.url="https://gitlab.com/smizy" \
+    org.label-schema.url="https://github.com/smizy" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.vcs-type="Git" \
     org.label-schema.version=$VERSION \
-    org.label-schema.vcs-url="https://gitlab.com/smizy/docker-bazel"
+    org.label-schema.vcs-url="https://github.com/smizy/docker-bazel"
 
 ENV BAZEL_VERSION     $VERSION
 ENV EXTRA_BAZEL_ARGS  $EXTRA_BAZEL_ARGS
